@@ -15,7 +15,6 @@ void inicializar_multiples(void) {
 
 //Funcion para dibujar lineas
 
-
 void Bresenham(int x1, int y1, int x2, int y2) {
     //glColor3f(1.0, 0.843, 0.0);
     //glPointSize(3);
@@ -112,55 +111,6 @@ void circunferencia(int xcentro, int ycentro, int radio) {
     }
 }
 
-
-void Octante1234(int radio, int xcentro, int ycentro) {
-    int x = 0;
-    int y = radio;
-    int p = 1 - radio;
-
-    while (x <= y) {
-        // Dibuja los puntos en los octantes deseados
-        puntear(xcentro + x, ycentro + y); // Octante 1
-        puntear(xcentro + y, ycentro + x); // Octante 2
-        puntear(xcentro - x, ycentro + y); // Octante 3
-        puntear(xcentro - y, ycentro + x); // Octante 4
-
-        x++;
-
-        if (p < 0)
-            p += 2 * x + 1;
-        else {
-            y--;
-            p += 2 * (x - y) + 1;
-        }
-    }
-}
-
-// Función para dibujar los octantes 7, 8, 1 y 2 del círculo utilizando el algoritmo de punto central
-
-void Octantefinal(int radio, int xcentro, int ycentro) {
-    int x = 0;
-    int y = radio;
-    int p = 1 - radio;
-
-    while (x <= y) {
-        puntear(xcentro + x, ycentro + y);
-        puntear(xcentro + y, ycentro + x);
-
-        puntear(xcentro + y, ycentro - x);
-        puntear(xcentro + x, ycentro - y);
-
-        x++;
-
-        if (p < 0)
-            p += 2 * x + 1;
-        else {
-            y--;
-            p += 2 * (x - y) + 1;
-        }
-    }
-}
-
 // Función para dibujar los octantes 7, 8, 1 y 2 de una elipse utilizando el algoritmo de punto central
 
 void OctantefinalElipse(int a, int b, int xcentro, int ycentro) {
@@ -252,7 +202,7 @@ void dibujar_multiples() {
     //Vidrios 
     
     
-    //Octantefinal(150, 350, 150);
+    
     //OctantefinalElipse(200,100, 350,175);
 
 
