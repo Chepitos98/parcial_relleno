@@ -15,27 +15,6 @@ void inicializar_multiples(void) {
 
 //Funcion para dibujar lineas
 
-/*
-void pintarLineaDDA(int x1, int y1, int x2, int y2) {
-    glColor3f(0.2, 0.0, 0.6); //Color morado
-    int dx = x2 - x1;
-    int dy = y2 - y1;
-    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
-    float xIncrement = dx / (float) steps;
-    float yIncrement = dy / (float) steps;
-    float x = x1;
-    float y = y1;
-
-    glPointSize(4);
-    glBegin(GL_POINTS); // Empezamos a dibujar puntos
-    for (float i = 0; i < steps; i++) {
-        x += xIncrement;
-        y += yIncrement;
-        glVertex2f(x, y); // Usamos glVertex2f para dibujar un punto en la posición (x, y)
-    }
-    glEnd(); // Terminamos de dibujar puntos
-}
- */
 
 void Bresenham(int x1, int y1, int x2, int y2) {
     //glColor3f(1.0, 0.843, 0.0);
@@ -133,40 +112,6 @@ void circunferencia(int xcentro, int ycentro, int radio) {
     }
 }
 
-// Función para dibujar un píxel en la pantalla para relleno por frontera
-
-// Función para obtener el color del píxel en las coordenadas (x, y)
-
-void getPixelColor(int x, int y, float* color) {
-    glReadPixels(x, y, 1, 1, GL_RGB, GL_FLOAT, color);
-}
-
-// Función para establecer el color del píxel en las coordenadas (x, y)
-
-void setPixelColor(int x, int y, float* color) {
-    glColor3fv(color);
-    glPointSize(1);
-    glBegin(GL_POINTS);
-    glVertex2f(x, y);
-    glEnd();
-    glFlush();
-}
-
-// Algoritmo de Relleno por Frontera
-
-void boundaryFill(int x, int y, float* fillColor, float* borderColor) {
-    float color[3];
-    getPixelColor(x, y, color);
-
-    if ((color[0] != borderColor[0] || color[1] != borderColor[1] || color[2] != borderColor[2]) &&
-            (color[0] != fillColor[0] || color[1] != fillColor[1] || color[2] != fillColor[2])) {
-        setPixelColor(x, y, fillColor);
-        boundaryFill(x + 1, y, fillColor, borderColor);
-        boundaryFill(x - 1, y, fillColor, borderColor);
-        boundaryFill(x, y + 1, fillColor, borderColor);
-        boundaryFill(x, y - 1, fillColor, borderColor);
-    }
-}
 
 void Octante1234(int radio, int xcentro, int ycentro) {
     int x = 0;
@@ -263,11 +208,6 @@ void dibujar_multiples() {
     glClear(GL_COLOR_BUFFER_BIT);
 
     glColor3f(1.0, 1.0, 1.0); // Color de la frontera (blanco)
-    /*
-        float franjaAzul[] = {0.0, 0.0, 1.0};
-        float franjaBlanca[] = {1.0, 1.0, 1.0};
-        float borderColor[] = {1.0, 1.0, 0.0}; //color de la frontera
-     */
 
     //Contorno
     Bresenham(41, 250, 660, 250);
@@ -311,40 +251,20 @@ void dibujar_multiples() {
     
     //Vidrios 
     
-    glFlush();
+    
     //Octantefinal(150, 350, 150);
     //OctantefinalElipse(200,100, 350,175);
 
 
-    // Rellenar áreas específicas
-    float fillColor1[3] = {0.0, 0.0, 1.0}; // Color de relleno (azul)
-    float fillColor2[3] = {0.0, 1.0, 1.0}; // Color de relleno (celeste)
-    float fillColor3[3] = {1.0, 0.0, 1.0}; // Color de relleno (rojo)
-    float fillColor4[3] = {1.0, 1.0, 0.0}; // Color de relleno (amarillo)
-    float borderColor[3] = {1.0, 1.0, 1.0}; // Color de la frontera (blanco)
-
-    // Rellenar el área principal del edificio
-    //boundaryFill(456, 449, fillColor1, borderColor);
-    boundaryFill(605, 251, fillColor2, borderColor);
-
-    // Rellenar las ventanas
-    boundaryFill(459, 398, fillColor3, borderColor); // Ventana superior izquierda
-    //boundaryFill(220, 170, fillColor3, borderColor); // Ventana superior derecha
-    //boundaryFill(170, 220, fillColor4, borderColor); // Ventana inferior izquierda
-    //boundaryFill(220, 220, fillColor1, borderColor); // Ventana inferior derecha
     
-    //Circuferencia
-    boundaryFill(503, 340, fillColor4, borderColor); // Ventana inferior derecha
-    
-
-    //glFlush();
+   
 
     //puntear(350,400);
 
 
 
 
-    //glFlush();
+    glFlush();
 }
 
 const char* get_carnet(void) {
