@@ -254,7 +254,8 @@ void dibujar_multiples() {
 
     float rellenoAzul[] = {0.0, 0.0, 1.0}; //Azul
     float rellenoCeleste[] = {0.0, 1.0, 1.0}; //Celeste
-    float rellenoAmarillo[] = {1.0, 1.0, 0.0}; //Amarillo
+    float rellenoAmarillo[] = {1.0, 1.0, 1.0}; //Blanco
+    float rellenoRandom[] = {1.0, 1.0, 0.0}; //Amarillo
     float borderColor[] = {1.0, 1.0, 1.0}; //color de la frontera
     float borderColor2[] = {0.0, 0.0, 1.0}; //color de la frontera(azul)
 
@@ -272,11 +273,23 @@ void dibujar_multiples() {
     Bresenham(606, 250, 606, 437);
     Bresenham(456, 437, 606, 437);
 
+    //Izquierda (opuesto)
+    Bresenham(245, 250, 245, 450);
+    Bresenham(94, 250, 94, 437);
+    Bresenham(243, 437, 94, 437);
+
+
     //Ventanas
     //Contorno Arriba
     Bresenham(456, 416, 549, 416);
     Bresenham(549, 416, 549, 381);
     Bresenham(549, 381, 456, 381);
+
+    //Contorno Arriba (lado izquierdo opuesto)
+    Bresenham(245, 416, 151, 416);
+    Bresenham(151, 416, 151, 381);
+    Bresenham(151, 381, 245, 381);
+
 
     //Vidrios
     BresenhamLinea(457, 414, 547, 414);
@@ -289,13 +302,37 @@ void dibujar_multiples() {
     BresenhamLinea(547, 414, 547, 383);
     BresenhamLinea(547, 383, 458, 383);
 
-    //Contorno Medio
+    //Vidrios (lado izquierdo) revisa el de arriba
+    BresenhamLinea(154, 414, 244, 414);
+    BresenhamLinea(244, 413, 244, 383);
+    BresenhamLinea(232, 413, 232, 383);
+    BresenhamLinea(218, 413, 218, 383);
+    BresenhamLinea(207, 413, 207, 383);
+    BresenhamLinea(192, 413, 192, 383);
+    BresenhamLinea(178, 413, 178, 383);
+    BresenhamLinea(154, 414, 154, 383);
+    BresenhamLinea(154, 383, 243, 383);
+
+
+
+
+    //Contorno Medio 
     Bresenham(456, 364, 552, 364);
-    BresenhamLinea(457, 354, 550, 354);
     Bresenham(553, 364, 553, 323);
     Bresenham(553, 323, 456, 323);
 
+    // Contorno Medio (izquierdo)
+    Bresenham(148, 364, 244, 364);
+
+    Bresenham(147, 364, 147, 323);
+    Bresenham(147, 323, 244, 323);
+
+
+
+
+
     //Vidrios
+    BresenhamLinea(457, 354, 550, 354);
     BresenhamLinea(457, 353, 457, 325);
     BresenhamLinea(471, 353, 471, 325);
 
@@ -309,12 +346,39 @@ void dibujar_multiples() {
     BresenhamLinea(550, 325, 457, 325);
     circunferencia(538, 340, 5);
 
+    //Vidrios (lado izquierdo opuesto)
+    BresenhamLinea(151, 354, 244, 354);
+    BresenhamLinea(244, 353, 244, 325);
+    BresenhamLinea(230, 353, 230, 325);
+    BresenhamLinea(216, 353, 216, 325);
+    BresenhamLinea(203, 353, 203, 325);
+    BresenhamLinea(187, 353, 187, 325);
+    BresenhamLinea(173, 353, 173, 325);
+    BresenhamLinea(151, 353, 151, 325);
+
+
+
+    BresenhamLinea(152, 325, 244, 325);
+    circunferencia(164, 340, 5);
+
+
+
+
+
 
     //Contorno Bajo
     Bresenham(456, 306, 555, 306);
     BresenhamLinea(458, 295, 552, 295);
     Bresenham(555, 306, 555, 266);
     Bresenham(555, 266, 456, 266);
+
+    //Contorno bajo ( izquierda)
+    Bresenham(146, 306, 245, 306);
+    Bresenham(147, 295, 241, 295);
+    Bresenham(146, 306, 146, 266);
+    Bresenham(146, 266, 245, 266);
+
+
 
     //Vidrios 
     BresenhamLinea(458, 295, 458, 268);
@@ -327,11 +391,8 @@ void dibujar_multiples() {
     BresenhamLinea(552, 268, 459, 268);
 
 
-    //Parte Interna
-    //Izquierda
-    Bresenham(90, 250, 90, 437);
-    Bresenham(90, 437, 220, 437);
-    Bresenham(220, 450, 220, 250);
+
+
 
     //Ventanas
 
@@ -344,6 +405,8 @@ void dibujar_multiples() {
 
     //Ventanas
 
+    //Lado Derecho
+    //Arriba
     /*
         rellenoporFrontera(468, 384, rellenoAmarillo, borderColor2);
         rellenoporFrontera(470, 384, rellenoAmarillo, borderColor2);
@@ -354,9 +417,17 @@ void dibujar_multiples() {
         rellenoporFrontera(524, 384, rellenoAmarillo, borderColor2);
      */
 
+    //Medio
+    rellenoporFrontera(458, 353, rellenoAmarillo, borderColor2);
+    rellenoporFrontera(472, 353, rellenoAmarillo, borderColor2);
+    rellenoporFrontera(486, 353, rellenoAmarillo, borderColor2);
+    rellenoporFrontera(499, 353, rellenoAmarillo, borderColor2);
+    rellenoporFrontera(515, 353, rellenoAmarillo, borderColor2);
+    rellenoporFrontera(549, 353, rellenoAmarillo, borderColor2);
+    rellenoporFrontera(539, 340, rellenoRandom, borderColor2);
 
 
-
+    //circunferencia(164, 340, 5);
 
 
 
@@ -371,5 +442,5 @@ void dibujar_multiples() {
 }
 
 const char* get_carnet(void) {
-    return "ZE17002";
+    return "ZE17002---MS19032";
 }
