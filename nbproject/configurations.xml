@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>parcial_relleno.h</itemPath>
+      <itemPath>usos_multiples.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,7 +14,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>main.c</itemPath>
-      <itemPath>parcial_relleno.c</itemPath>
+      <itemPath>usos_multiples.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -43,9 +43,9 @@
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="parcial_relleno.c" ex="false" tool="0" flavor2="0">
+      <item path="usos_multiples.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="parcial_relleno.h" ex="false" tool="3" flavor2="0">
+      <item path="usos_multiples.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -70,9 +70,9 @@
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="parcial_relleno.c" ex="false" tool="0" flavor2="0">
+      <item path="usos_multiples.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="parcial_relleno.h" ex="false" tool="3" flavor2="0">
+      <item path="usos_multiples.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

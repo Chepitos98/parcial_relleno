@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=parcial_relleno
+PROJECTNAME=usos_multiples_parcial
 
 # Active Configuration
 DEFAULTCONF=Debug
